@@ -1,0 +1,27 @@
+{
+    "name": "tchenu/guichetunique-php",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "Thibeault Chenu",
+            "email": "contact@tchenu.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GuichetUnique\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
