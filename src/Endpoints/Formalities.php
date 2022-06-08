@@ -13,10 +13,17 @@ final class Formalities extends Endpoint
         return 'formalities';
     }
 
-    public function validate(string $formalityId)
+    public function validate(string $resourceId)
     {
-        $response = $this->client->get("{$this->resource()}/{$formalityId}/validators");
+        $response = $this->client->get("{$this->resource()}/{$resourceId}/validators");
 
         return json_decode($response->getBody()->getContents(), true);
+    }
+
+    public function synthesis(string $resourceId)
+    {
+        $response = $this->client->get("{$this->resource()}/{$resourceId}/synthesis");
+
+        return $response->getBody()->getContents();
     }
 }
