@@ -35,4 +35,11 @@ class FormalityDrafts extends Endpoint
 
         return json_decode($response->getBody()->getContents(), true);
     }
+
+    public function attachments(string $resourceId)
+    {
+        $response = $this->client->get("{$this->resource()}/{$resourceId}/attachments");
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
 }
