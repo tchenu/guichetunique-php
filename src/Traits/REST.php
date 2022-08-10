@@ -7,6 +7,7 @@ trait REST
     public function all(array $queryParams = [])
     {
         $response = $this->client->get("{$this->resource()}", [
+            'headers' => ['Accept-Encoding' => 'application/json'],
             'query' => $queryParams,
         ]);
 
