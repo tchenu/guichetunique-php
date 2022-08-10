@@ -4,9 +4,11 @@ namespace GuichetUnique\Traits;
 
 trait REST
 {
-    public function all()
+    public function all(array $queryParams = [])
     {
-        $response = $this->client->get("{$this->resource()}");
+        $response = $this->client->get("{$this->resource()}", [
+            'query' => $queryParams,
+        ]);
 
         return json_decode($response->getBody()->getContents(), true);
     }
