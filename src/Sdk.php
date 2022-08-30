@@ -16,7 +16,7 @@ final class Sdk
 
     private $sandboxMode = false;
 
-    public function __construct(string $email, string $password, bool $sandboxMode = false)
+    public function __construct(string $email, string $password, bool $sandboxMode = false, $httpHandler = null)
     {
         $this->sandboxMode = $sandboxMode;
 
@@ -26,6 +26,7 @@ final class Sdk
                 'Authorization' => "Bearer {$this->attempt($email, $password)}",
                 'Accept' => 'application/json',
             ],
+            'handler' => $httpHandler,
         ]);
     }
 
