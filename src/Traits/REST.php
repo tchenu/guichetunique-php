@@ -11,14 +11,14 @@ trait REST
             'query' => $queryParams,
         ]);
 
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function get(string $resourceId): ?array
     {
         $response = $this->client->get("{$this->resource()}/{$resourceId}");
 
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function create(array $data): ?array
@@ -27,7 +27,7 @@ trait REST
             'json' => $data,
         ]);
 
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function update(array $data, string $resourceId): ?array
@@ -36,7 +36,7 @@ trait REST
             'json' => $data,
         ]);
 
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode((string) $response->getBody(), true);
     }
 
     public function destroy(string $resourceId): void
