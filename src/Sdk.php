@@ -75,6 +75,11 @@ final class Sdk
     {
         return new Signatures($this->client);
     }
+
+    public function regularizationRequests(): RegularizationRequests
+    {
+        return new RegularizationRequests($this->client);
+    }
     
     private function getApiBasePath(): string
     {
