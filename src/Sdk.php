@@ -3,6 +3,7 @@
 namespace GuichetUnique;
 
 use GuichetUnique\Endpoints\Attachments;
+use GuichetUnique\Endpoints\RegularizationRequests;
 use GuichetUnique\HttpClient;
 use GuichetUnique\Endpoints\Endpoint;
 use GuichetUnique\Endpoints\Formalities;
