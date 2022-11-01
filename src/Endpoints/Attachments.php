@@ -12,4 +12,9 @@ final class Attachments extends Endpoint
     {
         return 'attachments';
     }
+
+    public function download(string $resourceId)
+    {
+        return $this->client->get("{$this->resource()}/{$resourceId}/file")->getBody();
+    }
 }

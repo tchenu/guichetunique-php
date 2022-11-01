@@ -81,6 +81,11 @@ final class Sdk
     {
         return new RegularizationRequests($this->client);
     }
+
+    public function attachments(): Attachments
+    {
+        return new Attachments($this->client);
+    }
     
     private function getApiBasePath(): string
     {
