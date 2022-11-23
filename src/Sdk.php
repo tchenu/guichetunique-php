@@ -49,7 +49,7 @@ final class Sdk
         $headers = $response->getHeaders();
 
         foreach ($headers as $key => $header) {
-            if ($key === 'Set-Cookie') {
+            if (strtolower($key) === 'Set-Cookie') {
                 $bearerToken = $this->extractBearerToken($header[0]);
             }
         }
